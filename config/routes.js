@@ -19,7 +19,9 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
-  '/': { view: 'pages/homepage' },
+ '/': { view: 'pages/homepage' },
+ 'post/articles/delete/:id': 'ArticlesController.delete',
+
   
   
 

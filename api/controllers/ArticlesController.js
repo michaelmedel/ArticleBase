@@ -32,7 +32,7 @@ module.exports = {
             res.redirect('/articles/list');
         });
     },
-    delete: function(req, res){
+    destroy: function(req, res){
        Articles.destroy({id:req.params.id}).exec(function(err){
             if(err){
                 res.send(500, {error: 'Database Error'});
@@ -54,10 +54,7 @@ module.exports = {
         let title = req.body.title;
         let body = req.body.body;
 
-        Articles.update({id: req.params.id}, {
-            title:title,
-            body:body
-        }).exec(function(err){
+        Articles.update({id: req.params.id}, {title:title, body:body}).exec(function(err){
             if(err){
                 res.send(500, {error: 'Database Error'});
             }
