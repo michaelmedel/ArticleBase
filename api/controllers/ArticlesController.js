@@ -42,8 +42,7 @@ module.exports = {
         return false;
     },
     edit: function(req, res){
-        Articles.findOne({id: req.params.id})
-            .exec(function(err, article){
+        Articles.findOne({id:req.params.id}).exec(function(err, article){
                 if(err) {
                     res.send(500, {error: 'Database Error'});
                 }
